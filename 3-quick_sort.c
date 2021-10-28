@@ -56,10 +56,8 @@ void actual_quick_sort(int *array, int start, int end, size_t size)
 	if (start >= end)
 		return;
 	part_index = l_part(array, start, end, size);
-	if (part_index - start > 1)
-		actual_quick_sort(array, start, part_index - 1, size);
-	if (end - part_index > 1)
-		actual_quick_sort(array, part_index + 1, end, size);
+	actual_quick_sort(array, start, part_index - 1, size);
+	actual_quick_sort(array, part_index + 1, end, size);
 }
 
 /**
